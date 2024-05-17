@@ -1,6 +1,40 @@
 import { ProgressBarComponent } from "@syncfusion/ej2-react-progressbar";
 import { CheckboxIcon } from "../../assets/sidebarIcons";
 import { useRef } from "react";
+import { Bar, BarChart, ResponsiveContainer } from "recharts";
+
+const data = [
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+  },
+  {
+    name: "Page B",
+    uv: 3000,
+    pv: 1398,
+  },
+  {
+    name: "Page C",
+    uv: 2000,
+    pv: 9800,
+  },
+  {
+    name: "Page D",
+    uv: 2780,
+    pv: 3908,
+  },
+  {
+    name: "Page E",
+    uv: 1890,
+    pv: 4800,
+  },
+  {
+    name: "Page F",
+    uv: 2390,
+    pv: 3800,
+  },
+];
 
 const progressbar_animation = {
   enable: true,
@@ -24,6 +58,11 @@ export default function TopLayer() {
           Participation
         </p>
         <p className="text-[50px] font-bold leading-[50px]">54</p>
+        <ResponsiveContainer width="100%" height={"100%"}>
+          <BarChart width={730} height={300} data={data}>
+            <Bar dataKey="pv" fill="#6576FF" />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
       {/*  */}
       <div className="flex flex-col gap-3 rounded-2xl bg-t02-blue1 p-5">
@@ -33,6 +72,11 @@ export default function TopLayer() {
           Data
         </p>
         <p className="text-[50px] font-bold leading-[50px]">124</p>
+        <ResponsiveContainer width="100%" height={"100%"}>
+          <BarChart width={730} height={300} data={data}>
+            <Bar dataKey="pv" fill="#6576FF" />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
       {/*  */}
       <div className="col-span-2 flex flex-col gap-2.5 rounded-2xl bg-t02-blue1 p-5">

@@ -1,41 +1,69 @@
 import { FiArrowDownLeft } from "react-icons/fi";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+} from "recharts";
 
-// const data1 = [
-//   { x: "GBR", y: 27, toolTipMappingName: "Great Britain" },
-//   { x: "CHN", y: 26, toolTipMappingName: "China" },
-//   { x: "AUS", y: 8, toolTipMappingName: "Australia" },
-//   { x: "RUS", y: 19, toolTipMappingName: "Russia" },
-//   { x: "GER", y: 17, toolTipMappingName: "Germany" },
-//   { x: "UA", y: 2, toolTipMappingName: "Ukraine" },
-//   { x: "ES", y: 7, toolTipMappingName: "Spain" },
-//   { x: "UZB", y: 4, toolTipMappingName: "Uzbekistan" },
-//   { x: "JPN", y: 12, toolTipMappingName: "Japan" },
-//   { x: "NL", y: 8, toolTipMappingName: "NetherLand" },
-//   { x: "USA", y: 46, toolTipMappingName: "United States" },
-// ];
-// const data2 = [
-//   { x: "GBR", y: 23, toolTipMappingName: "Great Britain" },
-//   { x: "CHN", y: 18, toolTipMappingName: "China" },
-//   { x: "AUS", y: 11, toolTipMappingName: "Australia" },
-//   { x: "RUS", y: 17, toolTipMappingName: "Russia" },
-//   { x: "GER", y: 10, toolTipMappingName: "Germany" },
-//   { x: "UA", y: 5, toolTipMappingName: "Ukraine" },
-//   { x: "ES", y: 4, toolTipMappingName: "Spain" },
-//   { x: "UZB", y: 2, toolTipMappingName: "Uzbekistan" },
-//   { x: "JPN", y: 8, toolTipMappingName: "Japan" },
-//   { x: "NL", y: 7, toolTipMappingName: "NetherLand" },
-//   { x: "USA", y: 37, toolTipMappingName: "United States" },
-// ];
+const data = [
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+  },
+  {
+    name: "Page B",
+    uv: 3000,
+    pv: 1398,
+  },
+  {
+    name: "Page C",
+    uv: 2000,
+    pv: 9800,
+  },
+  {
+    name: "Page D",
+    uv: 2780,
+    pv: 3908,
+  },
+  {
+    name: "Page E",
+    uv: 1890,
+    pv: 4800,
+  },
+  {
+    name: "Page F",
+    uv: 2390,
+    pv: 3800,
+  },
+  {
+    name: "Page G",
+    uv: 3490,
+    pv: 4300,
+  },
+];
 
 export default function LaborStandards() {
   return (
     <div className="flex flex-col gap-3">
       <h3 className="text-[1.5rem] leading-10">Labor Standards</h3>
-      <div className="flex aspect-[3/1] gap-4 rounded-2xl bg-t02-blue1 p-5">
+      <div className="flex gap-4 rounded-2xl bg-t02-blue1 p-5">
         <div className="flex-1">
-          {/* <ChartComponent id="labor_bar_chart">
-            <Inject services={[ColumnSeries, Legend, Tooltip, Category, DataLabel]} />
-          </ChartComponent> */} 
+          <ResponsiveContainer width="100%" height={"100%"}>
+            <BarChart width={730} height={300} data={data}>
+              <CartesianGrid stroke="#0044FF"
+                strokeDasharray="3 3"
+                vertical={false}
+              />
+              <XAxis dataKey="name" tick={{ fill: "#fff", fontSize: 10 }} stroke="#0044FF" />
+              <YAxis tick={{ fill: "#fff", fontSize: 10 }}  stroke="#0044FF" />
+              <Bar dataKey="pv" fill="#FFFFFF" />
+              <Bar dataKey="uv" fill="#005ED8" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
         {/* stats */}
         <div className="flex w-[280px] flex-col gap-6">

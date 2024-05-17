@@ -1,30 +1,59 @@
-import { SparklineComponent } from "@syncfusion/ej2-react-charts";
-import { useRef } from "react";
+import {
+  AreaChart,
+  Area,
+  ResponsiveContainer,
+} from "recharts";
 
-const data = [
-  { x: 1900, y: 3.0 },
-  { x: 1920, y: 4.0 },
-  { x: 1940, y: 2.5 },
-  { x: 1960, y: 4.8 },
-  { x: 1980, y: 4.4 },
-  { x: 2000, y: 3.2 },
-  { x: 2005, y: 3.5 },
-  { x: 2010, y: 2.3 },
-  { x: 2012, y: 1.1 },
+const rechart_data = [
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: "Page B",
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: "Page C",
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: "Page D",
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: "Page E",
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: "Page F",
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: "Page G",
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
 ];
 
 export default function ResourceCharts() {
-  const sc1 = useRef();
-  const sc2 = useRef();
-  const sc3 = useRef();
-  const sc4 = useRef();
-  const sc5 = useRef();
-  const sc6 = useRef();
-
   return (
     <div className="grid grid-cols-6 gap-8">
       {/*  */}
-      <div className="flex aspect-square flex-col gap-5 rounded-2xl bg-t02-blue1 p-4">
+      <div className="flex flex-col gap-5 rounded-2xl bg-t02-blue1 p-4">
         <p className="text-[0.75rem] font-medium leading-4 text-white/70">
           Active Users
         </p>
@@ -34,131 +63,149 @@ export default function ResourceCharts() {
           </span>
           /80
         </p>
-        <SparklineComponent
-          id="sc1"
-          ref={sc1}
-          dataSource={data}
-          xName="x"
-          yName="y"
-          valueType="Category"
-          type="Area"
-          fill="rgba(0, 98, 255, 0.5)"
-          border={{
-            color: "#1B59F8",
-            width: 1.85,
-          }}
-          height="30px"
-        ></SparklineComponent>
+        <ResponsiveContainer width="100%" height={60}>
+          <AreaChart width={180} height={60} data={rechart_data}>
+            <defs>
+              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#0062FF" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#0062FF" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <Area
+              type="monotone"
+              dataKey="uv"
+              stroke="#1B59F8"
+              strokeWidth={2}
+              fillOpacity={1}
+              fill="url(#colorUv)"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
       </div>
       {/*  */}
-      <div className="flex aspect-square flex-col gap-5 rounded-2xl bg-t02-blue1 p-4">
+      <div className="flex flex-col gap-5 rounded-2xl bg-t02-blue1 p-4">
         <p className="text-[0.75rem] font-medium leading-4 text-white/70">
           Questions Query
         </p>
         <p className="text-[1.5rem] font-bold leading-6 text-white">3,298</p>
-        <SparklineComponent
-          id="sc2"
-          ref={sc2}
-          dataSource={data}
-          xName="x"
-          yName="y"
-          valueType="Category"
-          type="Area"
-          fill="rgba(0, 98, 255, 0.5)"
-          border={{
-            color: "#1B59F8",
-            width: 1.85,
-          }}
-          height="30px"
-        ></SparklineComponent>
+        <ResponsiveContainer width="100%" height={"100%"}>
+          <AreaChart width={300} height={90} data={rechart_data}>
+            <defs>
+              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#0062FF" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#0062FF" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <Area
+              type="monotone"
+              dataKey="uv"
+              stroke="#1B59F8"
+              strokeWidth={2}
+              fillOpacity={1}
+              fill="url(#colorUv)"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
       </div>
       {/*  */}
-      <div className="flex aspect-square flex-col gap-5 rounded-2xl bg-t02-blue1 p-4">
+      <div className="flex flex-col gap-5 rounded-2xl bg-t02-blue1 p-4">
         <p className="text-[0.75rem] font-medium leading-4 text-white/70">
           Av. Session Length
         </p>
         <p className="text-[1.5rem] font-bold leading-6 text-white">2m 34s</p>
-        <SparklineComponent
-          id="sc3"
-          ref={sc3}
-          dataSource={data}
-          xName="x"
-          yName="y"
-          valueType="Category"
-          type="Area"
-          fill="rgba(0, 98, 255, 0.5)"
-          border={{
-            color: "#1B59F8",
-            width: 1.85,
-          }}
-          height="30px"
-        ></SparklineComponent>
+        <ResponsiveContainer width="100%" height={"100%"}>
+          <AreaChart width={300} height={90} data={rechart_data}>
+            <defs>
+              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#0062FF" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#0062FF" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <Area
+              type="monotone"
+              dataKey="uv"
+              stroke="#1B59F8"
+              strokeWidth={2}
+              fillOpacity={1}
+              fill="url(#colorUv)"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
       </div>
       {/*  */}
-      <div className="flex aspect-square flex-col gap-5 rounded-2xl bg-t02-blue1 p-4">
+      <div className="flex flex-col gap-5 rounded-2xl bg-t02-blue1 p-4">
         <p className="text-[0.75rem] font-medium leading-4 text-white/70">
           Starting Knowledge
         </p>
         <p className="text-[1.5rem] font-bold leading-6 text-white">64%</p>
-        <SparklineComponent
-          id="sc4"
-          ref={sc4}
-          dataSource={data}
-          xName="x"
-          yName="y"
-          valueType="Category"
-          type="Area"
-          fill="rgba(0, 98, 255, 0.5)"
-          border={{
-            color: "#1B59F8",
-            width: 1.85,
-          }}
-          height="30px"
-        ></SparklineComponent>
+        <ResponsiveContainer width="100%" height={"100%"}>
+          <AreaChart width={300} height={90} data={rechart_data}>
+            <defs>
+              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#0062FF" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#0062FF" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <Area
+              type="monotone"
+              dataKey="uv"
+              stroke="#1B59F8"
+              strokeWidth={2}
+              fillOpacity={1}
+              fill="url(#colorUv)"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
       </div>
       {/*  */}
-      <div className="flex aspect-square flex-col gap-5 rounded-2xl bg-t02-blue1 p-4">
+      <div className="flex flex-col gap-5 rounded-2xl bg-t02-blue1 p-4">
         <p className="text-[0.75rem] font-medium leading-4 text-white/70">
           Current Knowledge
         </p>
         <p className="text-[1.5rem] font-bold leading-6 text-white">86%</p>
-        <SparklineComponent
-          id="sc5"
-          ref={sc5}
-          dataSource={data}
-          xName="x"
-          yName="y"
-          valueType="Category"
-          type="Area"
-          fill="rgba(0, 98, 255, 0.5)"
-          border={{
-            color: "#1B59F8",
-            width: 1.85,
-          }}
-          height="30px"
-        ></SparklineComponent>
+        <ResponsiveContainer width="100%" height={"100%"}>
+          <AreaChart width={300} height={90} data={rechart_data}>
+            <defs>
+              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#0062FF" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#0062FF" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <Area
+              type="monotone"
+              dataKey="uv"
+              stroke="#1B59F8"
+              strokeWidth={2}
+              fillOpacity={1}
+              fill="url(#colorUv)"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
       </div>
       {/*  */}
-      <div className="flex aspect-square flex-col gap-5 rounded-2xl bg-t02-blue1 p-4">
+      <div className="flex flex-col gap-5 rounded-2xl bg-t02-blue1 p-4">
         <p className="text-[0.75rem] font-medium leading-4 text-white/70">
           Knowledge Gain
         </p>
         <p className="text-[1.5rem] font-bold leading-6 text-white">+34%</p>
-        <SparklineComponent
-          id="sc6"
-          ref={sc6}
-          dataSource={data}
-          xName="x"
-          yName="y"
-          valueType="Category"
-          type="Area"
-          fill="rgba(0, 98, 255, 0.5)"
-          border={{
-            color: "#1B59F8",
-            width: 1.85,
-          }}
-          height="30px"
-        ></SparklineComponent>
+        <ResponsiveContainer width="100%" height={"100%"}>
+          <AreaChart width={300} height={90} data={rechart_data}>
+            <defs>
+              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#0062FF" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#0062FF" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <Area
+              type="monotone"
+              dataKey="uv"
+              stroke="#1B59F8"
+              strokeWidth={2}
+              fillOpacity={1}
+              fill="url(#colorUv)"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );
