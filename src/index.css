@@ -1,0 +1,263 @@
+@import url("https://cdn.syncfusion.com/ej2/material.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #fff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #002136 0%, #19232a 100%);
+}
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+/* global */
+
+.transparent-button {
+  @apply flex items-center gap-2 text-t02 font-semibold;
+}
+
+.filter-button {
+  @apply flex items-center gap-2 rounded-full bg-t02-blue1 px-6 py-3 text-[14px] font-medium text-white;
+}
+
+.search-box {
+  @apply min-w-[300px] bg-transparent text-t02 font-normal leading-5;
+}
+
+.form-textbox {
+  @apply rounded-lg border-[0.5px] border-[rgba(255,255,255,0.5)] bg-t02-blue1 p-5;
+}
+
+.form-button {
+  @apply rounded-[32px] bg-white px-20 py-4 font-bold leading-5 text-[#002743];
+}
+
+.chat-box {
+  @apply w-full bg-transparent text-[16px] font-medium;
+}
+
+/* global-end  */
+
+/* custom input fields */
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea {
+  outline: 0;
+}
+
+/* custom input fields-end */
+
+/* dropzone css */
+.dropzone {
+  text-align: center;
+  padding: 4rem;
+  border: 2px dashed #eeeeee;
+  color: #bdbdbd;
+}
+
+.dropzone .accept {
+  border-color: #107c10 !important;
+}
+
+.dropzone .reject {
+  border-color: #d83b01 !important;
+}
+
+.dropzone > button {
+  @apply my-2 rounded-3xl bg-[#002743] px-4 py-2 text-t02 font-bold text-white;
+}
+
+/* dropzone css-end */
+
+/* table */
+
+.r-table {
+  @apply my-auto w-full border-separate border-spacing-0;
+}
+
+.r-table thead > tr {
+  @apply capitalize text-[#526484];
+}
+
+.r-table thead > tr > th {
+  @apply bg-[#B6DFFF] px-4 py-2 text-left text-[14px] font-bold;
+}
+
+.r-table thead > tr > th:first-child {
+  @apply rounded-tl;
+}
+
+.r-table thead > tr > th:last-child {
+  @apply rounded-tr;
+}
+
+/*  */
+
+.r-table tbody > tr > td {
+  @apply border-b border-[#B6DFFF] px-4 py-3 text-[14px];
+}
+
+.r-table tbody > tr > td:first-child {
+  @apply border-l border-[#B6DFFF];
+}
+.r-table tbody > tr > td:last-child {
+  @apply border-r border-[#B6DFFF];
+}
+
+.r-table tbody > tr:last-child > td:first-child {
+  @apply rounded-bl;
+}
+
+.r-table tbody > tr:last-child > td:last-child {
+  @apply rounded-br;
+}
+
+/* table-end */
+
+/* antd custom select */
+.ant-select-outlined > .ant-select-selector,
+.ant-select-borderless > .ant-select-selector {
+  color: white;
+  line-height: 1.25rem;
+}
+.ant-select-outlined .ant-select-selection-item,
+.ant-select-borderless .ant-select-selection-item {
+  font-weight: 500;
+}
+.ant-select-outlined .ant-select-arrow,
+.ant-select-borderless > .ant-select-arrow {
+  color: white;
+}
+/* antd custom select-end */
+
+/* antd collapse */
+.ant-collapse-header {
+  font-weight: 700;
+}
+/* antd collapse-end */
+
+/* syncfusion-calendar */
+
+.dashboard_calendar {
+  background-color: transparent;
+  border: none;
+  min-width: 100%;
+}
+
+/* calendar table */
+.dashboard_calendar .e-content table {
+  aspect-ratio: 1/1;
+}
+
+/* calendar title */
+.dashboard_calendar .e-header .e-title {
+  color: rgb(255, 255, 255);
+}
+
+/* calendar table headings */
+.dashboard_calendar .e-content th {
+  color: rgb(255, 255, 255);
+}
+
+/* calendar table data */
+.dashboard_calendar .e-content span {
+  color: rgb(255, 255, 255);
+}
+
+/* hover date */
+.dashboard_calendar .e-content td:hover span.e-day {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+}
+
+/* focused date */
+.dashboard_calendar .e-content td.e-focused-date span.e-day,
+.dashboard_calendar .e-content td.e-focused-date:hover span.e-day {
+  background-color: transparent;
+  color: inherit;
+}
+
+/* selected date */
+.dashboard_calendar .e-content td.e-selected span.e-day,
+.dashboard_calendar .e-content td.e-selected:hover span.e-day {
+  background-color: inherit;
+  color: inherit;
+}
+
+/* today */
+.dashboard_calendar .e-content td.e-today span.e-day,
+.dashboard_calendar .e-content td.e-today:hover span.e-day {
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+}
+
+/* today focused, hovered */
+.dashboard_calendar .e-content td.e-focused-date.e-today span.e-day,
+.dashboard_calendar .e-content td.e-today:hover span.e-day,
+.dashboard_calendar .e-content td.e-focused-date.e-today:hover span.e-day {
+  background-color: transparent;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+}
+
+/* today selected */
+.dashboard_calendar .e-content td.e-today.e-selected span.e-day,
+.dashboard_calendar .e-content td.e-today.e-selected:hover span.e-day {
+  background-color: inherit;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  box-shadow: none;
+}
+
+/* prev, next */
+.dashboard_calendar .e-header span,
+.e-bigger.e-small .e-calendar .e-header span {
+  color: rgb(255, 255, 255);
+}
+
+/* .dashboard_calendar .e-content td.marked-procurements span.e-day */
+
+.dashboard_calendar .e-content td.marked-procurements span.e-day,
+.dashboard_calendar .e-content td.marked-procurements span.e-day {
+  background-color: #d83b01 !important;
+  border-radius: 50%;
+}
+
+/* syncfusion-calendar-end */
