@@ -65,14 +65,14 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 Uploads
               </NavLink>
             </li>
-            {/* past proposals */}
+            {/* past proposals / solicitation form */}
             <li>
               <NavLink
                 to="/past-proposals"
                 className={`flex items-center gap-[10px] rounded-[10px] px-4 py-2 ${pathname.includes("past-proposals") ? "bg-t02-blue2 font-bold text-white" : "text-[#80B0FF]"} `}
               >
                 <PastProposalsIcon />
-                Past Proposals
+                Solicitation Form
               </NavLink>
             </li>
             {/* generate proposal */}

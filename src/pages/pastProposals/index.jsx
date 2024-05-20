@@ -6,7 +6,7 @@ export default function PastProposals() {
     <>
       {/* header */}
       <div className="mb-12 flex flex-row items-center justify-between gap-3">
-        <h2 className="text-page-title font-bold">Past Proposal</h2>
+        <h2 className="text-page-title font-bold">Solicitation Form</h2>
         <button className="transparent-button">
           <MdDownload size={20} />
           <span>Download</span>

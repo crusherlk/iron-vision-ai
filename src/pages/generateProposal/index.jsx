@@ -3,6 +3,7 @@ import SolicitationComponent from "../../components/generate/solicitationCompone
 import ProposalTemplate from "../../components/generate/proposalTemplate";
 import GeneratedPreview from "../../components/generate/generatedPreview";
 import Chatbox from "../../components/generate/chatbox";
+import { MdDownload } from "react-icons/md";
 
 const genStatus = {
   initial: "INITIAL",
@@ -59,13 +60,20 @@ export default function GenerateProposal() {
     <>
       {/* header */}
       <div className="mb-20 flex flex-col gap-3">
-        <h2 className="text-page-title font-bold">Generate Proposal</h2>
+        <div className="flex flex-row items-center justify-between gap-3">
+          <h2 className="text-page-title font-bold">Generate Proposal</h2>
+          <button className="transparent-button">
+            <MdDownload size={20} />
+            <span>Download</span>
+          </button>
+        </div>
         <p>
           Makes detailed and personalized proposals based on what you need, how
           big the project is, what's important, and what you want
         </p>
       </div>
-      {/* header */}
+      {/* header-end */}
+
       {status === genStatus.initial && (
         <form
           className="mx-20"

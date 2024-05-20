@@ -129,11 +129,30 @@ export default function SolicitationForm() {
                 placeholder="+01 2412 7485 0014"
               />
             </div>
-            <div className="mt-6 flex gap-4">
-              <button className="rounded-3xl bg-white px-4 py-2 text-[13px] font-bold leading-5 text-[#002743]">
+            <div className="mt-6">
+              <button className="rounded-3xl bg-t02-blue2 px-4 py-2 text-[13px] font-bold leading-5 text-white">
+                Save
+              </button>
+            </div>
+            <div className="mt-12 flex gap-4">
+              <button
+                className="rounded-3xl bg-white px-4 py-2 text-[13px] font-bold leading-5 text-[#002743] disabled:opacity-50"
+                disabled={selectedSection <= 1}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setSelectedSection((prev) => prev - 1);
+                }}
+              >
                 Prev
               </button>
-              <button className="rounded-3xl bg-t02-blue2 px-4 py-2 text-[13px] font-bold leading-5 text-white">
+              <button
+                className="rounded-3xl bg-t02-blue2 px-4 py-2 text-[13px] font-bold leading-5 text-white disabled:opacity-50"
+                disabled={selectedSection >= 8}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setSelectedSection((prev) => prev + 1);
+                }}
+              >
                 Continue
               </button>
             </div>
